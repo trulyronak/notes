@@ -8,22 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		A6CDB2661CC7569700CC79D6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CDB2651CC7569700CC79D6 /* AppDelegate.swift */; };
-		A6CDB2681CC7569700CC79D6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CDB2671CC7569700CC79D6 /* ViewController.swift */; };
 		A6CDB26B1CC7569700CC79D6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6CDB2691CC7569700CC79D6 /* Main.storyboard */; };
 		A6CDB26E1CC7569700CC79D6 /* Notes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A6CDB26C1CC7569700CC79D6 /* Notes.xcdatamodeld */; };
 		A6CDB2701CC7569700CC79D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6CDB26F1CC7569700CC79D6 /* Assets.xcassets */; };
 		A6CDB2731CC7569700CC79D6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6CDB2711CC7569700CC79D6 /* LaunchScreen.storyboard */; };
+		A6CDB27B1CC759A300CC79D6 /* NoteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CDB27A1CC759A300CC79D6 /* NoteTableViewCell.swift */; };
+		A6CDB27D1CC759F700CC79D6 /* AllNotesViewTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CDB27C1CC759F700CC79D6 /* AllNotesViewTableViewController.swift */; };
+		A6CDB2841CC75E1300CC79D6 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CDB2831CC75E1300CC79D6 /* Note.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		A6CDB2621CC7569500CC79D6 /* Notes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Notes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6CDB2651CC7569700CC79D6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A6CDB2671CC7569700CC79D6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A6CDB26A1CC7569700CC79D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A6CDB26D1CC7569700CC79D6 /* Notes.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Notes.xcdatamodel; sourceTree = "<group>"; };
 		A6CDB26F1CC7569700CC79D6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A6CDB2721CC7569700CC79D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A6CDB2741CC7569700CC79D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A6CDB27A1CC759A300CC79D6 /* NoteTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteTableViewCell.swift; sourceTree = "<group>"; };
+		A6CDB27C1CC759F700CC79D6 /* AllNotesViewTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllNotesViewTableViewController.swift; sourceTree = "<group>"; };
+		A6CDB2831CC75E1300CC79D6 /* Note.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +60,57 @@
 		A6CDB2641CC7569600CC79D6 /* Notes */ = {
 			isa = PBXGroup;
 			children = (
-				A6CDB2651CC7569700CC79D6 /* AppDelegate.swift */,
-				A6CDB2671CC7569700CC79D6 /* ViewController.swift */,
-				A6CDB2691CC7569700CC79D6 /* Main.storyboard */,
+				A6CDB2811CC75A1D00CC79D6 /* Other */,
+				A6CDB27E1CC759FA00CC79D6 /* Code */,
+				A6CDB2801CC75A0800CC79D6 /* Storyboards */,
 				A6CDB26F1CC7569700CC79D6 /* Assets.xcassets */,
+			);
+			path = Notes;
+			sourceTree = "<group>";
+		};
+		A6CDB27E1CC759FA00CC79D6 /* Code */ = {
+			isa = PBXGroup;
+			children = (
+				A6CDB2821CC75E0C00CC79D6 /* Core */,
+				A6CDB2651CC7569700CC79D6 /* AppDelegate.swift */,
+				A6CDB27F1CC759FC00CC79D6 /* UI */,
+			);
+			name = Code;
+			sourceTree = "<group>";
+		};
+		A6CDB27F1CC759FC00CC79D6 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				A6CDB27A1CC759A300CC79D6 /* NoteTableViewCell.swift */,
+				A6CDB27C1CC759F700CC79D6 /* AllNotesViewTableViewController.swift */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		A6CDB2801CC75A0800CC79D6 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				A6CDB2691CC7569700CC79D6 /* Main.storyboard */,
 				A6CDB2711CC7569700CC79D6 /* LaunchScreen.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		A6CDB2811CC75A1D00CC79D6 /* Other */ = {
+			isa = PBXGroup;
+			children = (
 				A6CDB2741CC7569700CC79D6 /* Info.plist */,
 				A6CDB26C1CC7569700CC79D6 /* Notes.xcdatamodeld */,
 			);
-			path = Notes;
+			name = Other;
+			sourceTree = "<group>";
+		};
+		A6CDB2821CC75E0C00CC79D6 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				A6CDB2831CC75E1300CC79D6 /* Note.swift */,
+			);
+			name = Core;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,9 +184,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A6CDB2681CC7569700CC79D6 /* ViewController.swift in Sources */,
+				A6CDB2841CC75E1300CC79D6 /* Note.swift in Sources */,
+				A6CDB27D1CC759F700CC79D6 /* AllNotesViewTableViewController.swift in Sources */,
 				A6CDB26E1CC7569700CC79D6 /* Notes.xcdatamodeld in Sources */,
 				A6CDB2661CC7569700CC79D6 /* AppDelegate.swift in Sources */,
+				A6CDB27B1CC759A300CC79D6 /* NoteTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,6 +305,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = one.ShahIndustries.Notes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -268,6 +317,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = one.ShahIndustries.Notes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
