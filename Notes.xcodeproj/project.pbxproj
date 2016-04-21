@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A6CCAC0E1CC87359007184CE /* FormattedUILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CCAC0D1CC87359007184CE /* FormattedUILabel.swift */; };
+		A6CCAC121CC87801007184CE /* NoteEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CCAC111CC87801007184CE /* NoteEditViewController.swift */; };
+		A6CCAC141CC87E86007184CE /* Notebook.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CCAC131CC87E86007184CE /* Notebook.swift */; };
 		A6CDB2661CC7569700CC79D6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CDB2651CC7569700CC79D6 /* AppDelegate.swift */; };
 		A6CDB26B1CC7569700CC79D6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6CDB2691CC7569700CC79D6 /* Main.storyboard */; };
 		A6CDB26E1CC7569700CC79D6 /* Notes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A6CDB26C1CC7569700CC79D6 /* Notes.xcdatamodeld */; };
@@ -18,6 +21,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A6CCAC0D1CC87359007184CE /* FormattedUILabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormattedUILabel.swift; sourceTree = "<group>"; };
+		A6CCAC111CC87801007184CE /* NoteEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteEditViewController.swift; sourceTree = "<group>"; };
+		A6CCAC131CC87E86007184CE /* Notebook.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notebook.swift; sourceTree = "<group>"; };
 		A6CDB2621CC7569500CC79D6 /* Notes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Notes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6CDB2651CC7569700CC79D6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A6CDB26A1CC7569700CC79D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -41,6 +47,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A6CCAC0C1CC87344007184CE /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A6CCAC0D1CC87359007184CE /* FormattedUILabel.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		A6CCAC0F1CC877DE007184CE /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				A6CDB27C1CC759F700CC79D6 /* AllNotesViewTableViewController.swift */,
+				A6CCAC111CC87801007184CE /* NoteEditViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		A6CCAC101CC877E7007184CE /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				A6CDB27A1CC759A300CC79D6 /* NoteTableViewCell.swift */,
+			);
+			name = TableViewCells;
+			sourceTree = "<group>";
+		};
 		A6CDB2591CC7569500CC79D6 = {
 			isa = PBXGroup;
 			children = (
@@ -71,6 +102,7 @@
 		A6CDB27E1CC759FA00CC79D6 /* Code */ = {
 			isa = PBXGroup;
 			children = (
+				A6CCAC0C1CC87344007184CE /* Extensions */,
 				A6CDB2821CC75E0C00CC79D6 /* Core */,
 				A6CDB2651CC7569700CC79D6 /* AppDelegate.swift */,
 				A6CDB27F1CC759FC00CC79D6 /* UI */,
@@ -81,8 +113,8 @@
 		A6CDB27F1CC759FC00CC79D6 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				A6CDB27A1CC759A300CC79D6 /* NoteTableViewCell.swift */,
-				A6CDB27C1CC759F700CC79D6 /* AllNotesViewTableViewController.swift */,
+				A6CCAC101CC877E7007184CE /* TableViewCells */,
+				A6CCAC0F1CC877DE007184CE /* ViewControllers */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -109,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				A6CDB2831CC75E1300CC79D6 /* Note.swift */,
+				A6CCAC131CC87E86007184CE /* Notebook.swift */,
 			);
 			name = Core;
 			sourceTree = "<group>";
@@ -185,6 +218,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				A6CDB2841CC75E1300CC79D6 /* Note.swift in Sources */,
+				A6CCAC0E1CC87359007184CE /* FormattedUILabel.swift in Sources */,
+				A6CCAC141CC87E86007184CE /* Notebook.swift in Sources */,
+				A6CCAC121CC87801007184CE /* NoteEditViewController.swift in Sources */,
 				A6CDB27D1CC759F700CC79D6 /* AllNotesViewTableViewController.swift in Sources */,
 				A6CDB26E1CC7569700CC79D6 /* Notes.xcdatamodeld in Sources */,
 				A6CDB2661CC7569700CC79D6 /* AppDelegate.swift in Sources */,
@@ -340,6 +376,7 @@
 				A6CDB2791CC7569700CC79D6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
