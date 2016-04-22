@@ -9,20 +9,22 @@
 import UIKit
 
 class AllNotesViewTableViewController: UITableViewController {
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
+        //constructing the notebook
         
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+        //adding an edit bar button
         self.navigationItem.leftBarButtonItem = self.editButtonItem()
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        self.tableView.reloadData()
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     // MARK: - Table view data source
@@ -30,7 +32,7 @@ class AllNotesViewTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Test Code Only
-        return 1
+        return notebook.size()
     }
     
     
@@ -40,8 +42,11 @@ class AllNotesViewTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("noteCell", forIndexPath: indexPath) as! NoteTableViewCell
         
         // Configure the cell...
-        cell.noteNameLabel.text = "Testing... "
-        cell.noteLastEditDateLabel.text = "Last Edited: 12/12/2012 @ 12:22 PM"
+        let note = notebook.getNote(indexPath.row)
+        cell.noteNameLabel.text = note.title
+        cell.noteLastEditDateLabel.text = note.lastEditDate()
+        cell.selectionStyle = .None
+        
         return cell
     }
     
@@ -52,6 +57,7 @@ class AllNotesViewTableViewController: UITableViewController {
         if editingStyle == .Delete {
             // Delete the row from the data source
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            notebook.removeNote(indexPath.row)
         }
     }
     
@@ -78,6 +84,13 @@ class AllNotesViewTableViewController: UITableViewController {
         let backItem = UIBarButtonItem()
         backItem.title = "Notes"
         navigationItem.backBarButtonItem = backItem // This will show in the next view controller being pushed
+        
+        
+        if segue.identifier == "compose" {
+            let vc = segue.destinationViewController as! NoteEditViewController
+            vc.newNote = true
+            vc.viewDidLoad()
+        }
     }
     
 }

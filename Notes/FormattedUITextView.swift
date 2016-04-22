@@ -13,7 +13,7 @@
 import Foundation
 import UIKit
 
-extension UITextField {
+extension UITextView {
     
     func fullRange() -> NSRange {
         return NSMakeRange(0, (text ?? "").characters.count)
