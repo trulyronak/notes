@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		37180FC21CCB0CE7004DB33F /* FontsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37180FC11CCB0CE7004DB33F /* FontsView.swift */; };
+		37180FC41CCB0CF8004DB33F /* ColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37180FC31CCB0CF8004DB33F /* ColorView.swift */; };
+		37180FC61CCB0D01004DB33F /* ColorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37180FC51CCB0D01004DB33F /* ColorView.xib */; };
+		37180FC81CCB0D07004DB33F /* FontsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37180FC71CCB0D07004DB33F /* FontsView.xib */; };
+		3719C04B1CCB020B00631866 /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3719C04A1CCB020B00631866 /* EditView.swift */; };
+		3719C04D1CCB021E00631866 /* EditView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3719C04C1CCB021E00631866 /* EditView.xib */; };
 		A6CCAC0E1CC87359007184CE /* FormattedUITextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CCAC0D1CC87359007184CE /* FormattedUITextView.swift */; };
 		A6CCAC121CC87801007184CE /* NoteEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CCAC111CC87801007184CE /* NoteEditViewController.swift */; };
 		A6CCAC141CC87E86007184CE /* Notebook.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CCAC131CC87E86007184CE /* Notebook.swift */; };
@@ -23,6 +29,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		37180FC11CCB0CE7004DB33F /* FontsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontsView.swift; sourceTree = "<group>"; };
+		37180FC31CCB0CF8004DB33F /* ColorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorView.swift; sourceTree = "<group>"; };
+		37180FC51CCB0D01004DB33F /* ColorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ColorView.xib; sourceTree = "<group>"; };
+		37180FC71CCB0D07004DB33F /* FontsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FontsView.xib; sourceTree = "<group>"; };
+		3719C04A1CCB020B00631866 /* EditView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
+		3719C04C1CCB021E00631866 /* EditView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditView.xib; sourceTree = "<group>"; };
 		A6CCAC0D1CC87359007184CE /* FormattedUITextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormattedUITextView.swift; sourceTree = "<group>"; };
 		A6CCAC111CC87801007184CE /* NoteEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteEditViewController.swift; sourceTree = "<group>"; };
 		A6CCAC131CC87E86007184CE /* Notebook.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notebook.swift; sourceTree = "<group>"; };
@@ -51,6 +63,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		37180FBF1CCB0CCF004DB33F /* UIViews */ = {
+			isa = PBXGroup;
+			children = (
+				37180FC01CCB0CD5004DB33F /* XIB */,
+				3719C04A1CCB020B00631866 /* EditView.swift */,
+				37180FC11CCB0CE7004DB33F /* FontsView.swift */,
+				37180FC31CCB0CF8004DB33F /* ColorView.swift */,
+			);
+			name = UIViews;
+			sourceTree = "<group>";
+		};
+		37180FC01CCB0CD5004DB33F /* XIB */ = {
+			isa = PBXGroup;
+			children = (
+				3719C04C1CCB021E00631866 /* EditView.xib */,
+				37180FC51CCB0D01004DB33F /* ColorView.xib */,
+				37180FC71CCB0D07004DB33F /* FontsView.xib */,
+			);
+			name = XIB;
+			sourceTree = "<group>";
+		};
 		A6CCAC0C1CC87344007184CE /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -119,6 +152,7 @@
 		A6CDB27F1CC759FC00CC79D6 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				37180FBF1CCB0CCF004DB33F /* UIViews */,
 				A6CCAC101CC877E7007184CE /* TableViewCells */,
 				A6CCAC0F1CC877DE007184CE /* ViewControllers */,
 			);
@@ -211,8 +245,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				A6CDB2731CC7569700CC79D6 /* LaunchScreen.storyboard in Resources */,
+				37180FC61CCB0D01004DB33F /* ColorView.xib in Resources */,
 				A6CDB2701CC7569700CC79D6 /* Assets.xcassets in Resources */,
+				3719C04D1CCB021E00631866 /* EditView.xib in Resources */,
 				A6CDB26B1CC7569700CC79D6 /* Main.storyboard in Resources */,
+				37180FC81CCB0D07004DB33F /* FontsView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -225,6 +262,9 @@
 			files = (
 				A6CDB2841CC75E1300CC79D6 /* Note.swift in Sources */,
 				A6CCAC0E1CC87359007184CE /* FormattedUITextView.swift in Sources */,
+				3719C04B1CCB020B00631866 /* EditView.swift in Sources */,
+				37180FC41CCB0CF8004DB33F /* ColorView.swift in Sources */,
+				37180FC21CCB0CE7004DB33F /* FontsView.swift in Sources */,
 				A6CCAC141CC87E86007184CE /* Notebook.swift in Sources */,
 				A6FF42441CC9B65F0004F9BD /* CustomOperators.swift in Sources */,
 				A6CCAC121CC87801007184CE /* NoteEditViewController.swift in Sources */,
