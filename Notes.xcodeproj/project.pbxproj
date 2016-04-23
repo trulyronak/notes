@@ -13,6 +13,7 @@
 		37180FC81CCB0D07004DB33F /* FontsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37180FC71CCB0D07004DB33F /* FontsView.xib */; };
 		3719C04B1CCB020B00631866 /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3719C04A1CCB020B00631866 /* EditView.swift */; };
 		3719C04D1CCB021E00631866 /* EditView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3719C04C1CCB021E00631866 /* EditView.xib */; };
+		A62BE81D1CCB35370079C824 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62BE81C1CCB35370079C824 /* DataManager.swift */; };
 		A6CCAC0E1CC87359007184CE /* FormattedUITextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CCAC0D1CC87359007184CE /* FormattedUITextView.swift */; };
 		A6CCAC121CC87801007184CE /* NoteEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CCAC111CC87801007184CE /* NoteEditViewController.swift */; };
 		A6CCAC141CC87E86007184CE /* Notebook.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CCAC131CC87E86007184CE /* Notebook.swift */; };
@@ -35,6 +36,7 @@
 		37180FC71CCB0D07004DB33F /* FontsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FontsView.xib; sourceTree = "<group>"; };
 		3719C04A1CCB020B00631866 /* EditView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
 		3719C04C1CCB021E00631866 /* EditView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditView.xib; sourceTree = "<group>"; };
+		A62BE81C1CCB35370079C824 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		A6CCAC0D1CC87359007184CE /* FormattedUITextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormattedUITextView.swift; sourceTree = "<group>"; };
 		A6CCAC111CC87801007184CE /* NoteEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteEditViewController.swift; sourceTree = "<group>"; };
 		A6CCAC131CC87E86007184CE /* Notebook.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notebook.swift; sourceTree = "<group>"; };
@@ -182,6 +184,7 @@
 			children = (
 				A6CDB2831CC75E1300CC79D6 /* Note.swift */,
 				A6CCAC131CC87E86007184CE /* Notebook.swift */,
+				A62BE81C1CCB35370079C824 /* DataManager.swift */,
 			);
 			name = Core;
 			sourceTree = "<group>";
@@ -263,6 +266,7 @@
 				A6CDB2841CC75E1300CC79D6 /* Note.swift in Sources */,
 				A6CCAC0E1CC87359007184CE /* FormattedUITextView.swift in Sources */,
 				3719C04B1CCB020B00631866 /* EditView.swift in Sources */,
+				A62BE81D1CCB35370079C824 /* DataManager.swift in Sources */,
 				37180FC41CCB0CF8004DB33F /* ColorView.swift in Sources */,
 				37180FC21CCB0CE7004DB33F /* FontsView.swift in Sources */,
 				A6CCAC141CC87E86007184CE /* Notebook.swift in Sources */,

@@ -28,6 +28,16 @@ extension UITextView {
         attributedText = text
     }
     
+    ///Supports Normal Array Indexing
+    func setTextColor(color: UIColor, from: Int, to: Int){
+        let input: NSRange? = NSRange(location: from, length: to + 1)
+        
+        guard let range = input else { return }
+        let text = mutableAttributedString()
+        text.addAttribute(NSForegroundColorAttributeName, value: color, range: range)
+        attributedText = text
+    }
+    
     func setFont(font: UIFont, range: NSRange?) {
         guard let range = range else { return }
         let text = mutableAttributedString()
@@ -248,8 +258,8 @@ extension UITextView {
         return nil
     }
     
-    func setTextColor(color: UIColor, from: String, to: String) {
-        setTextColor(color, range: rangeFrom(from, to: to))
+    func setTextColor(color: UIColor, fromString: String, toString: String) {
+        setTextColor(color, range: rangeFrom(fromString, to: toString))
     }
     
     func setFont(font: UIFont, from: String, to: String) {

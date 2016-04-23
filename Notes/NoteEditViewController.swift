@@ -20,12 +20,11 @@ class NoteEditViewController: UIViewController, UITextViewDelegate {
         super.viewDidLoad()
         
         if newNote == true {
-            //notebook.addNote(currentNote!)
-            newNote = false
+            newNote = false //for my own clarification
         }
         else{
             noteTitleField.text = currentNote?.title
-            noteContentField = currentNote?.content
+            noteContentField.attributedText = currentNote?.content?.attributedText
         }
         
         // Do any additional setup after loading the view.
@@ -45,6 +44,13 @@ class NoteEditViewController: UIViewController, UITextViewDelegate {
         updateNote()
     }
     
+    func application(application: UIApplication, shouldAllowExtensionPointIdentifier extensionPointIdentifier: String) -> Bool {
+        if extensionPointIdentifier == UIApplicationKeyboardExtensionPointIdentifier {
+            return true
+        }
+        return true
+    }
+    
     func updateNote() {
         if let _ = currentNote {}
             
@@ -55,6 +61,7 @@ class NoteEditViewController: UIViewController, UITextViewDelegate {
         
         currentNote?.content = noteContentField
         currentNote?.title = noteTitleField.text
+        
         notebook.updateNote(currentNote!)
     }
     

@@ -13,8 +13,7 @@ class AllNotesViewTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //constructing the notebook
-        
+        notebook.refreshData()
         //adding an edit bar button
         self.navigationItem.leftBarButtonItem = self.editButtonItem()
     }
@@ -89,7 +88,14 @@ class AllNotesViewTableViewController: UITableViewController {
         if segue.identifier == "compose" {
             let vc = segue.destinationViewController as! NoteEditViewController
             vc.newNote = true
-            vc.viewDidLoad()
+            //tvc.viewDidLoad()
+        }
+        
+        if segue.identifier == "edit" {
+            let vc = segue.destinationViewController as! NoteEditViewController
+            vc.newNote = false
+            vc.currentNote = notebook.getNote((self.tableView.indexPathForSelectedRow?.row)!)
+            //vc.viewDidLoad()
         }
     }
     
