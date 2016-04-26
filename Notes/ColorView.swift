@@ -9,13 +9,15 @@
 import UIKit
 
 class ColorView: UIView {
-
-    /*
-    // Only override drawRect: if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func drawRect(rect: CGRect) {
-        // Drawing code
+    
+    var referenceVC: NoteEditViewController!
+    @IBOutlet weak var colorPicker: HSBColorPicker!
+    
+    func createPicker() {
+        colorPicker.delegate = referenceVC
     }
-    */
 
+    class func instanceFromNib() -> UIView {
+        return UINib(nibName: "ColorView", bundle: nil).instantiateWithOwner(nil, options: nil)[0] as! UIView
+    }
 }

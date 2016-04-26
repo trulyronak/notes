@@ -14,6 +14,7 @@
 		3719C04B1CCB020B00631866 /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3719C04A1CCB020B00631866 /* EditView.swift */; };
 		3719C04D1CCB021E00631866 /* EditView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3719C04C1CCB021E00631866 /* EditView.xib */; };
 		A62BE81D1CCB35370079C824 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62BE81C1CCB35370079C824 /* DataManager.swift */; };
+		A6C2A0FB1CCF27EE00026DF9 /* HSBColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C2A0FA1CCF27EE00026DF9 /* HSBColorPicker.swift */; };
 		A6CCAC0E1CC87359007184CE /* FormattedUITextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CCAC0D1CC87359007184CE /* FormattedUITextView.swift */; };
 		A6CCAC121CC87801007184CE /* NoteEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CCAC111CC87801007184CE /* NoteEditViewController.swift */; };
 		A6CCAC141CC87E86007184CE /* Notebook.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CCAC131CC87E86007184CE /* Notebook.swift */; };
@@ -37,6 +38,7 @@
 		3719C04A1CCB020B00631866 /* EditView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
 		3719C04C1CCB021E00631866 /* EditView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditView.xib; sourceTree = "<group>"; };
 		A62BE81C1CCB35370079C824 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		A6C2A0FA1CCF27EE00026DF9 /* HSBColorPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HSBColorPicker.swift; sourceTree = "<group>"; };
 		A6CCAC0D1CC87359007184CE /* FormattedUITextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormattedUITextView.swift; sourceTree = "<group>"; };
 		A6CCAC111CC87801007184CE /* NoteEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteEditViewController.swift; sourceTree = "<group>"; };
 		A6CCAC131CC87E86007184CE /* Notebook.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notebook.swift; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 				37180FBF1CCB0CCF004DB33F /* UIViews */,
 				A6CCAC101CC877E7007184CE /* TableViewCells */,
 				A6CCAC0F1CC877DE007184CE /* ViewControllers */,
+				A6C2A0FA1CCF27EE00026DF9 /* HSBColorPicker.swift */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -221,6 +224,7 @@
 				TargetAttributes = {
 					A6CDB2611CC7569500CC79D6 = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = A8F2RPBSBD;
 					};
 				};
 			};
@@ -276,6 +280,7 @@
 				A6CDB26E1CC7569700CC79D6 /* Notes.xcdatamodeld in Sources */,
 				A6FF42481CC9BE040004F9BD /* SwiftDate.swift in Sources */,
 				A6CDB2661CC7569700CC79D6 /* AppDelegate.swift in Sources */,
+				A6C2A0FB1CCF27EE00026DF9 /* HSBColorPicker.swift in Sources */,
 				A6CDB27B1CC759A300CC79D6 /* NoteTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -389,10 +394,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Notes/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = one.ShahIndustries.Notes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -401,10 +410,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Notes/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = one.ShahIndustries.Notes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

@@ -8,12 +8,12 @@
 
 import UIKit
 
-class NoteEditViewController: UIViewController, UITextViewDelegate {
+class NoteEditViewController: UIViewController, UITextViewDelegate, UIPickerViewDataSource, UIPickerViewDelegate, HSBColorPickerDelegate {
     
     @IBOutlet weak var noteTitleField: UITextField!
     @IBOutlet weak var noteContentField: UITextView!
     var newNote: Bool?
-    
+    //var font: UIFont = UIFont(descriptor: , size: <#T##CGFloat#>)
     var currentNote: Note?
     
     override func viewDidLoad() {
@@ -66,6 +66,53 @@ class NoteEditViewController: UIViewController, UITextViewDelegate {
     }
     
     @IBAction func editText(sender: UIBarButtonItem) {
+        let editView = EditView.instanceFromNib() as! EditView
+        editView.frame = CGRectMake(0, 500, editView.frame.size.width, editView.frame.size.height)// set new position exactly
+        editView.refrenceVC = self
+        self.view.addSubview(editView)
+        let range = noteContentField.selectedRange
+        self.view.endEditing(true)
+        noteContentField.selectedRange = range
+        noteContentField.selectable = true
+    }
+    
+    
+    //for fontsview
+    
+    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    // returns the # of rows in each component..
+    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return UIFont.familyNames().count
+    }
+    
+    //returns the font
+    func pickerView(pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusingView view: UIView?) -> UIView
+    {
+        let pickerLabel = UILabel()
+        pickerLabel.textColor = UIColor.blackColor()
+        pickerLabel.text = UIFont.familyNames()[row]
+        // pickerLabel.font = UIFont(name: pickerLabel.font.fontName, size: 15)
+        pickerLabel.font = UIFont(name: UIFont.familyNames()[row], size: 15) // In this use your custom font
+        pickerLabel.textAlignment = NSTextAlignment.Center
+        return pickerLabel
+    }
+    
+    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        let range: NSRange = noteContentField.selectedRange
+        let font = UIFont(name: UIFont.familyNames()[row], size: 16) //will change it to selected size
+        noteContentField.setFont(font!, range: range)
+        
+        self.noteContentField.selectedRange = range //fixing strange bug where selected range gets removed
+    }
+    
+    //for colorview
+    func HSBColorColorPickerTouched(sender: HSBColorPicker, color: UIColor, point: CGPoint, state: UIGestureRecognizerState!) {
+        let range: NSRange = noteContentField.selectedRange
+        noteContentField.setTextColor(color, range: range)
+        self.noteContentField.selectedRange = range //fixing strange bug where selected range gets removed
     }
     
     /*

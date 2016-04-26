@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FontsView: UIView {
+class FontsView: UIView{
 
     /*
     // Only override drawRect: if you perform custom drawing.
@@ -17,5 +17,14 @@ class FontsView: UIView {
         // Drawing code
     }
     */
-
+    @IBOutlet weak var fontsPicker: UIPickerView!
+    var refrenceVC: NoteEditViewController!
+    
+    func createPicker() {
+        fontsPicker.dataSource = refrenceVC
+        fontsPicker.delegate = refrenceVC
+    }
+    class func instanceFromNib() -> UIView {
+        return UINib(nibName: "FontsView", bundle: nil).instantiateWithOwner(nil, options: nil)[0] as! UIView
+    }
 }

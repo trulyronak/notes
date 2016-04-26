@@ -1,17 +1,32 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10116"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB">
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ColorView" customModule="Notes" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="600" height="200"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0bj-Va-Ll6" customClass="HSBColorPicker" customModule="Notes" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="200"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+            </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="0bj-Va-Ll6" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="2Df-TN-qCI"/>
+                <constraint firstItem="0bj-Va-Ll6" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="hVL-Vc-vm4"/>
+                <constraint firstAttribute="trailing" secondItem="0bj-Va-Ll6" secondAttribute="trailing" id="kDd-OA-t4Y"/>
+                <constraint firstAttribute="bottom" secondItem="0bj-Va-Ll6" secondAttribute="bottom" id="pMl-uX-nbX"/>
+            </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="colorPicker" destination="0bj-Va-Ll6" id="6C0-OU-gBM"/>
+            </connections>
+            <point key="canvasLocation" x="606" y="240"/>
         </view>
     </objects>
 </document>
