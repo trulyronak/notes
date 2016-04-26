@@ -26,8 +26,11 @@ class NoteEditViewController: UIViewController, UITextViewDelegate, UIPickerView
             noteTitleField.text = currentNote?.title
             noteContentField.attributedText = currentNote?.content?.attributedText
         }
-        
-        // Do any additional setup after loading the view.
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardAppeared:", name: UIKeyboardWillChangeFrameNotification, object: nil)
+    }
+    
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
     }
     
     override func didReceiveMemoryWarning() {
@@ -63,6 +66,13 @@ class NoteEditViewController: UIViewController, UITextViewDelegate, UIPickerView
         currentNote?.title = noteTitleField.text
         
         notebook.updateNote(currentNote!)
+    }
+    func keyboardAppeared(notification: NSNotification) {
+        for view in self.view.subviews {
+            if view.isKindOfClass(EditView) || view.isKindOfClass(FontsView) || view.isKindOfClass(ColorView){
+                view.removeFromSuperview()
+            }
+        }
     }
     
     @IBAction func editText(sender: UIBarButtonItem) {
@@ -106,6 +116,7 @@ class NoteEditViewController: UIViewController, UITextViewDelegate, UIPickerView
         noteContentField.setFont(font!, range: range)
         
         self.noteContentField.selectedRange = range //fixing strange bug where selected range gets removed
+        updateNote()
     }
     
     //for colorview
@@ -113,6 +124,7 @@ class NoteEditViewController: UIViewController, UITextViewDelegate, UIPickerView
         let range: NSRange = noteContentField.selectedRange
         noteContentField.setTextColor(color, range: range)
         self.noteContentField.selectedRange = range //fixing strange bug where selected range gets removed
+        updateNote()
     }
     
     /*

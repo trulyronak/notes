@@ -16,8 +16,25 @@ class EditView: UIView{
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.fontButton.center.x = self.center.x
-        self.colorButton.center.x = self.center.x
+        
+        /*
+        var topConstraint = NSLayoutConstraint(item: self.fontButton, attribute: .Top, relatedBy: .Equal, toItem: self, attribute: .Top, multiplier: 1, constant: 0)
+        var bottomContraint = NSLayoutConstraint(item: self.fontButton, attribute: .Bottom, relatedBy: .Equal, toItem: self, attribute: .Bottom, multiplier: 1, constant: 0)
+        var constraints = [topConstraint, bottomContraint]
+        fontButton.addConstraints(constraints)
+        
+        topConstraint = NSLayoutConstraint(item: self.colorButton, attribute: .Top, relatedBy: .Equal, toItem: self, attribute: .Top, multiplier: 1, constant: 0)
+        bottomContraint = NSLayoutConstraint(item: self.colorButton, attribute: .Bottom, relatedBy: .Equal, toItem: self, attribute: .Bottom, multiplier: 1, constant: 0)
+        constraints = [topConstraint, bottomContraint]
+        colorButton.addConstraints(constraints)
+        
+        fontButton.titleLabel?.textAlignment = .Center
+        colorButton.titleLabel?.textAlignment = .Center
+        
+        fontButton.frame = CGRectMake(0, 0, self.frame.width, self.frame.height/2)
+        colorButton.frame = CGRectMake(0, self.frame.height/2, self.frame.width, self.frame.height/2)
+        */
+        
         
     }
     required init?(coder: NSCoder) {
