@@ -24,7 +24,7 @@
         <!--Note Edit View Controller-->
         <scene sceneID="UcG-Of-1um">
             <objects>
-                <viewController id="D0O-RU-tKh" customClass="NoteEditViewController" customModule="Notes" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="compose" useStoryboardIdentifierAsRestorationIdentifier="YES" id="D0O-RU-tKh" customClass="NoteEditViewController" customModule="Notes" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="UgC-su-Di8"/>
                         <viewControllerLayoutGuide type="bottom" id="6B7-Ue-tZ0"/>
@@ -38,7 +38,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" secureTextEntry="YES"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <connections>
                                     <outlet property="delegate" destination="D0O-RU-tKh" id="fhc-eB-iqe"/>
                                 </connections>

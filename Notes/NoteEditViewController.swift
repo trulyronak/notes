@@ -34,6 +34,11 @@ class NoteEditViewController: UIViewController, UITextViewDelegate, UIPickerView
 
     }
     
+    override func viewDidAppear(animated: Bool) {
+        noteContentField.keyboardType = .Default
+        noteContentField.reloadInputViews()
+    }
+    
     deinit {
         NSNotificationCenter.defaultCenter().removeObserver(self)
     }
