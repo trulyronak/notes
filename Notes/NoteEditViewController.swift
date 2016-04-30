@@ -31,7 +31,12 @@ class NoteEditViewController: UIViewController, UITextViewDelegate, UIPickerView
         noteContentField.delegate = self
         noteContentField.keyboardType = .Default
         noteContentField.reloadInputViews()
-
+        self.navigationItem.backBarButtonItem?.title = "Notes"
+        
+        //add 3d touch
+        let forceTouchNo3d = UILongPressGestureRecognizer(target: self.noteContentField, action: #selector(NoteEditViewController.handleLongTouch(_:)))
+        //self.noteContentField.addGestureRecognizer(forceTouchNo3d)
+        
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -48,7 +53,7 @@ class NoteEditViewController: UIViewController, UITextViewDelegate, UIPickerView
         // Dispose of any resources that can be recreated.
     }
     
-  
+    
     func textViewDidChange(textView: UITextView) {
         updateNote()
     }
@@ -86,16 +91,19 @@ class NoteEditViewController: UIViewController, UITextViewDelegate, UIPickerView
     }
     
     @IBAction func editText(sender: UIBarButtonItem) {
+        openEditView()
+    }
+    
+    func openEditView() {
+        self.view.endEditing(true)
         let editView = EditView.instanceFromNib() as! EditView
         editView.frame = CGRectMake(0, 500, editView.frame.size.width, editView.frame.size.height)// set new position exactly
         editView.refrenceVC = self
         self.view.addSubview(editView)
         let range = noteContentField.selectedRange
-        self.view.endEditing(true)
         noteContentField.selectedRange = range
         noteContentField.selectable = true
     }
-    
     
     //for fontsview
     
@@ -105,26 +113,55 @@ class NoteEditViewController: UIViewController, UITextViewDelegate, UIPickerView
     
     // returns the # of rows in each component..
     func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return UIFont.familyNames().count
+        return UIFont.familyNames().count + 1
     }
     
+    func scrollToFont(picker: UIPickerView) {
+        let range = noteContentField.selectedRange
+        if range.length == 0 {return}
+        let selectedText = noteContentField.attributedText.attributedSubstringFromRange(range)
+        let attributes = selectedText.attributesAtIndex(0, effectiveRange: nil)
+        let font = attributes[NSFontAttributeName] as! UIFont
+        var row = UIFont.familyNames().indexOf(font.familyName)
+        if row == nil {
+            row = 0
+        }
+        else {
+            row!++
+        }
+        picker.selectRow(row!, inComponent: 0, animated: false)
+    }
     //returns the font
     func pickerView(pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusingView view: UIView?) -> UIView
     {
         let pickerLabel = UILabel()
-        pickerLabel.textColor = UIColor.blackColor()
-        pickerLabel.text = UIFont.familyNames()[row]
-        // pickerLabel.font = UIFont(name: pickerLabel.font.fontName, size: 15)
-        pickerLabel.font = UIFont(name: UIFont.familyNames()[row], size: 15) // In this use your custom font
-        pickerLabel.textAlignment = NSTextAlignment.Center
+        
+        if row != 0 {
+            pickerLabel.textColor = UIColor.blackColor()
+            pickerLabel.text = UIFont.familyNames()[row - 1]
+            // pickerLabel.font = UIFont(name: pickerLabel.font.fontName, size: 15)
+            pickerLabel.font = UIFont(name: UIFont.familyNames()[row - 1], size: 15) // In this use your custom font
+            pickerLabel.textAlignment = .Center
+        }
+        else {
+            pickerLabel.textColor = UIColor.blackColor()
+            pickerLabel.text = "System Standard"
+            pickerLabel.textAlignment = .Center
+            
+        }
         return pickerLabel
     }
     
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         let range: NSRange = noteContentField.selectedRange
-        let font = UIFont(name: UIFont.familyNames()[row], size: 16) //will change it to selected size
-        noteContentField.setFont(font!, range: range)
-        
+        if row == 0 {
+            let font = UIFont.systemFontOfSize(16) //will change it to selected size
+            noteContentField.setFont(font, range: range)
+        }
+        else  {
+            let font = UIFont(name: UIFont.familyNames()[row - 1], size: 16) //will change it to selected size
+            noteContentField.setFont(font!, range: range)
+        }
         self.noteContentField.selectedRange = range //fixing strange bug where selected range gets removed
         updateNote()
     }
@@ -137,6 +174,10 @@ class NoteEditViewController: UIViewController, UITextViewDelegate, UIPickerView
         updateNote()
     }
     
+    //3d
+    func handleLongTouch(sender: UILongPressGestureRecognizer) {
+        openEditView()
+    }
     /*
      // MARK: - Navigation
      

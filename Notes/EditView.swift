@@ -49,6 +49,7 @@ class EditView: UIView{
         print(fontView.frame.height)
         fontView.refrenceVC = refrenceVC
         fontView.createPicker()
+        refrenceVC.scrollToFont(fontView.fontsPicker)
         self.superview?.addSubview(fontView)
         self.removeFromSuperview()
     }

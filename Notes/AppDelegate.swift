@@ -27,8 +27,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if shortcutItem.type == "compose" {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let editView = storyboard.instantiateViewControllerWithIdentifier("compose")
-            let navVC = self.window?.rootViewController
-            navVC?.presentViewController(editView, animated: true, completion: nil)
+            
+            let navVC = storyboard.instantiateInitialViewController() as! UINavigationController
+            let backItem = UIBarButtonItem()
+            backItem.title = "Notes"
+            self.window?.rootViewController = navVC
+            self.window?.makeKeyAndVisible()
+            
+            navVC.pushViewController(editView, animated: true)
+            editView.navigationItem.backBarButtonItem = backItem
             quickActionHandled = true
         }
         return quickActionHandled

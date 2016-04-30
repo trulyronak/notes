@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="322-M5-9M0">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="322-M5-9M0">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -83,7 +83,7 @@
             </objects>
             <point key="canvasLocation" x="446" y="315"/>
         </scene>
-        <!--My Notes-->
+        <!--Notes-->
         <scene sceneID="2W3-A8-y0Y">
             <objects>
                 <tableViewController id="fyd-Tp-1oi" customClass="AllNotesViewTableViewController" customModule="Notes" customModuleProvider="target" sceneMemberID="viewController">
@@ -96,7 +96,7 @@
                                 <rect key="frame" x="0.0" y="92" width="600" height="74"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9RV-Vr-F40" id="JEL-v9-VK5">
-                                    <rect key="frame" x="0.0" y="0.0" width="567" height="73"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="567" height="73.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last Edited: 12:12 PM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uDB-61-bmj">
@@ -135,7 +135,7 @@
                             <outlet property="delegate" destination="fyd-Tp-1oi" id="Wgo-ui-ZFJ"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="My Notes" id="kbd-uF-V5b">
+                    <navigationItem key="navigationItem" title="Notes" id="kbd-uF-V5b">
                         <barButtonItem key="rightBarButtonItem" systemItem="compose" id="r4o-L9-FTy">
                             <connections>
                                 <segue destination="D0O-RU-tKh" kind="show" identifier="compose" id="gpg-qP-GCn"/>

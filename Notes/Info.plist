@@ -34,11 +34,13 @@
 	<array>
 		<dict>
 			<key>UIApplicationShortcutItemIconType</key>
-			<string>UIApplicationShortcutItemIconTypeCompose</string>
-			<key>UIApplicationShortcutItemType</key>
-			<string>compose</string>
+			<string>UIApplicationShortcutIconTypeCompose</string>
+			<key>UIApplicationShortcutItemSubtitle</key>
+			<string>Compose a New Note</string>
 			<key>UIApplicationShortcutItemTitle</key>
 			<string>Add Note</string>
+			<key>UIApplicationShortcutItemType</key>
+			<string>compose</string>
 		</dict>
 	</array>
 	<key>UISupportedInterfaceOrientations</key>
