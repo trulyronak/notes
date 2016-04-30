@@ -16,6 +16,7 @@ class NoteEditViewController: UIViewController, UITextViewDelegate, UIPickerView
     //var font: UIFont = UIFont(descriptor: , size: <#T##CGFloat#>)
     var currentNote: Note?
     
+    //fr = noteContentView
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -26,7 +27,16 @@ class NoteEditViewController: UIViewController, UITextViewDelegate, UIPickerView
             noteTitleField.text = currentNote?.title
             noteContentField.attributedText = currentNote?.content?.attributedText
         }
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardAppeared:", name: UIKeyboardWillChangeFrameNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(NoteEditViewController.keyboardAppeared(_:)), name: UIKeyboardWillChangeFrameNotification, object: nil)
+        noteContentField.delegate = self
+        noteContentField.keyboardType = .Default
+        noteContentField.reloadInputViews()
+
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        noteContentField.keyboardType = .Default
+        noteContentField.reloadInputViews()
     }
     
     deinit {
@@ -38,7 +48,7 @@ class NoteEditViewController: UIViewController, UITextViewDelegate, UIPickerView
         // Dispose of any resources that can be recreated.
     }
     
-    
+  
     func textViewDidChange(textView: UITextView) {
         updateNote()
     }

@@ -10,33 +10,62 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="200"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QDS-KY-mXq">
-                    <rect key="frame" x="0.0" y="100" width="600" height="100"/>
+                <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QDS-KY-mXq">
+                    <rect key="frame" x="0.0" y="0.0" width="300" height="200"/>
                     <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                    <state key="normal" title="Change Color"/>
+                    <state key="normal">
+                        <attributedString key="attributedTitle">
+                            <fragment content="Change Color">
+                                <attributes>
+                                    <color key="NSColor" red="0.20000000000000001" green="0.20000000000000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <font key="NSFont" size="18" name="HelveticaNeue"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                    </state>
                     <connections>
                         <action selector="changeColor:" destination="iN0-l3-epB" eventType="touchUpInside" id="hyD-zS-VLk"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sLP-sq-nli">
-                    <rect key="frame" x="0.0" y="0.0" width="600" height="100"/>
+                <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sLP-sq-nli">
+                    <rect key="frame" x="300" y="0.0" width="300" height="200"/>
                     <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
-                    <state key="normal" title="Change Font"/>
+                    <state key="normal">
+                        <attributedString key="attributedTitle">
+                            <fragment content="Change Font">
+                                <attributes>
+                                    <color key="NSColor" red="0.20000000000000001" green="0.20000000000000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <font key="NSFont" size="18" name="HelveticaNeue"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                    </state>
                     <connections>
                         <action selector="changeFont:" destination="iN0-l3-epB" eventType="touchUpInside" id="Fpl-nH-jUF"/>
                     </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="QDS-KY-mXq" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="57j-Jf-tXL"/>
+                <constraint firstAttribute="bottom" secondItem="sLP-sq-nli" secondAttribute="bottom" id="Ckr-ht-SYg"/>
+                <constraint firstAttribute="trailing" secondItem="sLP-sq-nli" secondAttribute="trailing" id="QBd-e1-8bI"/>
+                <constraint firstAttribute="bottom" secondItem="QDS-KY-mXq" secondAttribute="bottom" id="TRX-DC-oqE"/>
+                <constraint firstItem="sLP-sq-nli" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="UaR-y0-h6X"/>
+                <constraint firstItem="sLP-sq-nli" firstAttribute="leading" secondItem="QDS-KY-mXq" secondAttribute="trailing" id="Vda-TK-BnJ"/>
+                <constraint firstItem="QDS-KY-mXq" firstAttribute="height" secondItem="sLP-sq-nli" secondAttribute="height" id="Yo6-bm-nEN"/>
+                <constraint firstItem="QDS-KY-mXq" firstAttribute="width" secondItem="sLP-sq-nli" secondAttribute="width" id="Zpt-yK-mGs"/>
+                <constraint firstItem="QDS-KY-mXq" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="fE3-sR-jdA"/>
+            </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="colorButton" destination="QDS-KY-mXq" id="Nk5-Gb-Kv3"/>
                 <outlet property="fontButton" destination="sLP-sq-nli" id="M3c-Xj-JSE"/>
             </connections>
-            <point key="canvasLocation" x="777" y="267"/>
+            <point key="canvasLocation" x="777" y="79"/>
         </view>
     </objects>
 </document>

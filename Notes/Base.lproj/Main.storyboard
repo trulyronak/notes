@@ -24,7 +24,7 @@
         <!--Note Edit View Controller-->
         <scene sceneID="UcG-Of-1um">
             <objects>
-                <viewController id="D0O-RU-tKh" customClass="NoteEditViewController" customModule="Notes" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="compose" useStoryboardIdentifierAsRestorationIdentifier="YES" id="D0O-RU-tKh" customClass="NoteEditViewController" customModule="Notes" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="UgC-su-Di8"/>
                         <viewControllerLayoutGuide type="bottom" id="6B7-Ue-tZ0"/>
@@ -38,7 +38,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" secureTextEntry="YES"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <connections>
                                     <outlet property="delegate" destination="D0O-RU-tKh" id="fhc-eB-iqe"/>
                                 </connections>
@@ -81,7 +81,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lmb-tz-es2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="453" y="338"/>
+            <point key="canvasLocation" x="446" y="315"/>
         </scene>
         <!--My Notes-->
         <scene sceneID="2W3-A8-y0Y">
@@ -138,7 +138,7 @@
                     <navigationItem key="navigationItem" title="My Notes" id="kbd-uF-V5b">
                         <barButtonItem key="rightBarButtonItem" systemItem="compose" id="r4o-L9-FTy">
                             <connections>
-                                <segue destination="D0O-RU-tKh" kind="show" identifier="compose" id="zsL-Ev-uAc"/>
+                                <segue destination="D0O-RU-tKh" kind="show" identifier="compose" id="gpg-qP-GCn"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -149,6 +149,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="0bx-a7-Tel"/>
+        <segue reference="gpg-qP-GCn"/>
     </inferredMetricsTieBreakers>
 </document>

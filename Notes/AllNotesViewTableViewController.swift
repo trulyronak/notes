@@ -74,7 +74,7 @@ class AllNotesViewTableViewController: UITableViewController {
             vc.newNote = true
             //tvc.viewDidLoad()
         }
-        
+ 
         if segue.identifier == "edit" {
             let vc = segue.destinationViewController as! NoteEditViewController
             vc.newNote = false

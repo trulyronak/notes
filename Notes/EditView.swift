@@ -35,6 +35,8 @@ class EditView: UIView{
         colorButton.frame = CGRectMake(0, self.frame.height/2, self.frame.width, self.frame.height/2)
         */
         
+
+        
         
     }
     required init?(coder: NSCoder) {
