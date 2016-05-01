@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
@@ -10,61 +10,44 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="200"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yKs-Wy-aUY">
-                    <rect key="frame" x="0.0" y="0.0" width="271" height="200"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="271" id="Hxx-Ly-91q"/>
-                    </constraints>
+                <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yKs-Wy-aUY">
+                    <rect key="frame" x="82" y="0.0" width="246" height="174"/>
                 </pickerView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="16" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iBd-zc-8jh">
-                    <rect key="frame" x="300" y="0.0" width="200" height="200"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="200" id="gdF-v5-kpH"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="89"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="16" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iBd-zc-8jh">
+                    <rect key="frame" x="336" y="0.0" width="146" height="100"/>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.14999999999999999" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="71"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o4d-WK-5Db">
-                    <rect key="frame" x="499" y="0.0" width="101" height="100"/>
-                    <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="100" id="QLj-9i-4w5"/>
-                        <constraint firstAttribute="width" constant="101" id="ht8-GE-5gh"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="44"/>
-                    <state key="normal" title="+">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UtH-6r-VTV">
-                    <rect key="frame" x="499" y="100" width="101" height="100"/>
-                    <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UtH-6r-VTV">
+                    <rect key="frame" x="336" y="101" width="73" height="73"/>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.30118534482758619" colorSpace="calibratedRGB"/>
                     <fontDescription key="fontDescription" type="system" pointSize="44"/>
                     <state key="normal" title="-">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="lowerFont:" destination="iN0-l3-epB" eventType="touchUpInside" id="53n-Wd-Uwi"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o4d-WK-5Db">
+                    <rect key="frame" x="409" y="101" width="73" height="73"/>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.30118534482758619" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="44"/>
+                    <state key="normal" title="+">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="increaseFont:" destination="iN0-l3-epB" eventType="touchUpInside" id="8uc-Km-zEN"/>
+                    </connections>
                 </button>
             </subviews>
-            <color key="backgroundColor" red="0.085336305201053619" green="0.39259791374206543" blue="0.10324307531118393" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-            <constraints>
-                <constraint firstItem="yKs-Wy-aUY" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Hg1-dU-i6n"/>
-                <constraint firstItem="iBd-zc-8jh" firstAttribute="top" secondItem="o4d-WK-5Db" secondAttribute="top" id="IT7-kg-Cmr"/>
-                <constraint firstItem="o4d-WK-5Db" firstAttribute="leading" secondItem="UtH-6r-VTV" secondAttribute="leading" id="KpI-3R-A1n"/>
-                <constraint firstItem="yKs-Wy-aUY" firstAttribute="bottom" secondItem="iBd-zc-8jh" secondAttribute="bottom" id="Mhi-1L-HC3"/>
-                <constraint firstItem="UtH-6r-VTV" firstAttribute="top" secondItem="o4d-WK-5Db" secondAttribute="bottom" id="OBB-ZL-A7J"/>
-                <constraint firstItem="yKs-Wy-aUY" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="OxR-pS-bJJ"/>
-                <constraint firstItem="yKs-Wy-aUY" firstAttribute="top" secondItem="iBd-zc-8jh" secondAttribute="top" id="UwJ-xP-khc"/>
-                <constraint firstItem="iBd-zc-8jh" firstAttribute="bottom" secondItem="UtH-6r-VTV" secondAttribute="bottom" id="knJ-zY-LzZ"/>
-                <constraint firstItem="o4d-WK-5Db" firstAttribute="trailing" secondItem="UtH-6r-VTV" secondAttribute="trailing" id="lII-BI-wpF"/>
-                <constraint firstItem="iBd-zc-8jh" firstAttribute="leading" secondItem="yKs-Wy-aUY" secondAttribute="trailing" constant="29" id="rR9-48-xea"/>
-                <constraint firstAttribute="bottom" secondItem="yKs-Wy-aUY" secondAttribute="bottom" id="trB-m0-nx9"/>
-                <constraint firstAttribute="trailing" secondItem="o4d-WK-5Db" secondAttribute="trailing" id="trC-0c-gO8"/>
-            </constraints>
+            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.089999999999999997" colorSpace="calibratedRGB"/>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="fontSizeLabel" destination="iBd-zc-8jh" id="cMT-0b-8TL"/>
                 <outlet property="fontsPicker" destination="yKs-Wy-aUY" id="p8l-0n-mmz"/>
             </connections>
             <point key="canvasLocation" x="217" y="378"/>

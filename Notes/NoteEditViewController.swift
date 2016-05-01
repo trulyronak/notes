@@ -97,15 +97,49 @@ class NoteEditViewController: UIViewController, UITextViewDelegate, UIPickerView
     func openEditView() {
         self.view.endEditing(true)
         let editView = EditView.instanceFromNib() as! EditView
-        editView.frame = CGRectMake(0, 500, editView.frame.size.width, editView.frame.size.height)// set new position exactly
+        editView.frame = CGRectMake(0, self.view.frame.height - editView.frame.height
+            , editView.frame.size.width, editView.frame.size.height)// set new position exactly
         editView.refrenceVC = self
         self.view.addSubview(editView)
         let range = noteContentField.selectedRange
         noteContentField.selectedRange = range
         noteContentField.selectable = true
+        view.addConstraint(NSLayoutConstraint(item: editView, attribute: .Bottom, relatedBy: .Equal, toItem: view, attribute: .Bottom, multiplier: 1, constant: 0))
+        
+        view.addConstraint(NSLayoutConstraint(item: editView, attribute: .Right, relatedBy: .Equal, toItem: view, attribute: .Bottom, multiplier: 1, constant: 0))
     }
     
     //for fontsview
+    
+    func getFontSize() -> String{
+        let range = noteContentField.selectedRange
+        if range.length == 0 {return "/"}
+        let selectedText = noteContentField.attributedText.attributedSubstringFromRange(range)
+        let attributes = selectedText.attributesAtIndex(0, effectiveRange: nil)
+        let font = attributes[NSFontAttributeName] as! UIFont
+        noteContentField.selectedRange = range
+        return "\(Int(font.pointSize))"
+    }
+    
+    func changeFont(increasing: Bool) {
+        let range = noteContentField.selectedRange
+        if range.length == 0 {return}
+        let selectedText: NSAttributedString = noteContentField.attributedText.attributedSubstringFromRange(range)
+        print(selectedText.string)
+        let attributes = selectedText.attributesAtIndex(0, effectiveRange: nil)
+        var font = attributes[NSFontAttributeName] as! UIFont
+        
+        if increasing {
+            font = font.fontWithSize(font.pointSize + 1)
+            noteContentField.setFont(font, range: range)
+        }
+        else {
+            font = font.fontWithSize(font.pointSize - 1)
+            noteContentField.setFont(font, range: range)
+        }
+        noteContentField.selectedRange = range
+
+    }
     
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
         return 1
@@ -154,12 +188,17 @@ class NoteEditViewController: UIViewController, UITextViewDelegate, UIPickerView
     
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         let range: NSRange = noteContentField.selectedRange
+        if range.length == 0 {return}
+        let selectedText = noteContentField.attributedText.attributedSubstringFromRange(range)
+        let attributes = selectedText.attributesAtIndex(0, effectiveRange: nil)
+        let textFont = attributes[NSFontAttributeName] as! UIFont
+
         if row == 0 {
-            let font = UIFont.systemFontOfSize(16) //will change it to selected size
+            let font = UIFont.systemFontOfSize(textFont.pointSize) //will change it to selected size
             noteContentField.setFont(font, range: range)
         }
         else  {
-            let font = UIFont(name: UIFont.familyNames()[row - 1], size: 16) //will change it to selected size
+            let font = UIFont(name: UIFont.familyNames()[row - 1], size: textFont.pointSize) //will change it to selected size
             noteContentField.setFont(font!, range: range)
         }
         self.noteContentField.selectedRange = range //fixing strange bug where selected range gets removed
