@@ -27,15 +27,10 @@ class NoteEditViewController: UIViewController, UITextViewDelegate, UIPickerView
             noteTitleField.text = currentNote?.title
             noteContentField.attributedText = currentNote?.content?.attributedText
         }
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(NoteEditViewController.keyboardAppeared(_:)), name: UIKeyboardWillChangeFrameNotification, object: nil)
         noteContentField.delegate = self
         noteContentField.keyboardType = .Default
         noteContentField.reloadInputViews()
         self.navigationItem.backBarButtonItem?.title = "Notes"
-        
-        //add 3d touch
-        let forceTouchNo3d = UILongPressGestureRecognizer(target: self.noteContentField, action: #selector(NoteEditViewController.handleLongTouch(_:)))
-        //self.noteContentField.addGestureRecognizer(forceTouchNo3d)
         
     }
     
@@ -214,8 +209,12 @@ class NoteEditViewController: UIViewController, UITextViewDelegate, UIPickerView
     }
     
     //3d
-    func handleLongTouch(sender: UILongPressGestureRecognizer) {
-        openEditView()
+    override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        if let touch = touches.first where traitCollection.forceTouchCapability == .Available {
+            if touch.force > 1 {
+                openEditView()
+            }
+        }
     }
     /*
      // MARK: - Navigation
