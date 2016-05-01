@@ -78,18 +78,22 @@ class NoteEditViewController: UIViewController, UITextViewDelegate, UIPickerView
         notebook.updateNote(currentNote!)
     }
     func keyboardAppeared(notification: NSNotification) {
-        for view in self.view.subviews {
-            if view.isKindOfClass(EditView) || view.isKindOfClass(FontsView) || view.isKindOfClass(ColorView){
-                view.removeFromSuperview()
-            }
-        }
+        removeEditingViews()
     }
     
     @IBAction func editText(sender: UIBarButtonItem) {
         openEditView()
     }
     
+    func removeEditingViews() {
+        for view in self.view.subviews {
+            if view.isKindOfClass(EditView) || view.isKindOfClass(FontsView) || view.isKindOfClass(ColorView){
+                view.removeFromSuperview()
+            }
+        }
+    }
     func openEditView() {
+        removeEditingViews()
         self.view.endEditing(true)
         let editView = EditView.instanceFromNib() as! EditView
         editView.frame = CGRectMake(0, self.view.frame.height - editView.frame.height
