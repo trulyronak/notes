@@ -18,5 +18,7 @@ And of course, there are many 3d touch applications, from a shortcut icon, to ac
 
 I hope you will accept my application.
 
+:(
+
 ##App Designed and Created by Ronak Shah
 
