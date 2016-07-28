@@ -8,18 +8,21 @@
 
 import UIKit
 
-class NoteEditViewController: UIViewController, UITextViewDelegate, UIPickerViewDataSource, UIPickerViewDelegate, HSBColorPickerDelegate {
+class NoteEditViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, HSBColorPickerDelegate {
     
     @IBOutlet weak var noteTitleField: UITextField!
     @IBOutlet weak var noteContentField: UITextView!
     var newNote: Bool?
-    //var font: UIFont = UIFont(descriptor: , size: <#T##CGFloat#>)
+    
     var currentNote: Note?
+    
+    var currentFont: UIFont!
+    var currentColor: UIColor!
     
     //fr = noteContentView
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        addToolBar(noteContentField)
         if newNote == true {
             newNote = false //for my own clarification
         }
@@ -27,6 +30,9 @@ class NoteEditViewController: UIViewController, UITextViewDelegate, UIPickerView
             noteTitleField.text = currentNote?.title
             noteContentField.attributedText = currentNote?.content?.attributedText
         }
+        currentFont = UIFont.systemFontOfSize(16)
+        currentColor = UIColor.blackColor()
+        
         noteContentField.delegate = self
         noteContentField.keyboardType = .Default
         noteContentField.reloadInputViews()

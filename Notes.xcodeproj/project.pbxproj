@@ -16,6 +16,8 @@
 		379CAAB91CD67F9500070D7C /* MyApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379CAAB81CD67F9500070D7C /* MyApplication.swift */; };
 		379CAABB1CD6841400070D7C /* UIWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379CAABA1CD6841400070D7C /* UIWindow.swift */; };
 		A62BE81D1CCB35370079C824 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62BE81C1CCB35370079C824 /* DataManager.swift */; };
+		A6B819411D49F454008C7E38 /* NoteEditViewControllerToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B819401D49F454008C7E38 /* NoteEditViewControllerToolbar.swift */; };
+		A6B819431D49F957008C7E38 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B819421D49F957008C7E38 /* UIImage.swift */; };
 		A6C2A0FB1CCF27EE00026DF9 /* HSBColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C2A0FA1CCF27EE00026DF9 /* HSBColorPicker.swift */; };
 		A6CCAC0E1CC87359007184CE /* FormattedUITextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CCAC0D1CC87359007184CE /* FormattedUITextView.swift */; };
 		A6CCAC121CC87801007184CE /* NoteEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CCAC111CC87801007184CE /* NoteEditViewController.swift */; };
@@ -42,6 +44,8 @@
 		379CAAB81CD67F9500070D7C /* MyApplication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyApplication.swift; sourceTree = "<group>"; };
 		379CAABA1CD6841400070D7C /* UIWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIWindow.swift; sourceTree = "<group>"; };
 		A62BE81C1CCB35370079C824 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		A6B819401D49F454008C7E38 /* NoteEditViewControllerToolbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteEditViewControllerToolbar.swift; sourceTree = "<group>"; };
+		A6B819421D49F957008C7E38 /* UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		A6C2A0FA1CCF27EE00026DF9 /* HSBColorPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HSBColorPicker.swift; sourceTree = "<group>"; };
 		A6CCAC0D1CC87359007184CE /* FormattedUITextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormattedUITextView.swift; sourceTree = "<group>"; };
 		A6CCAC111CC87801007184CE /* NoteEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteEditViewController.swift; sourceTree = "<group>"; };
@@ -100,6 +104,8 @@
 				A6CCAC0D1CC87359007184CE /* FormattedUITextView.swift */,
 				379CAAB81CD67F9500070D7C /* MyApplication.swift */,
 				379CAABA1CD6841400070D7C /* UIWindow.swift */,
+				A6B819401D49F454008C7E38 /* NoteEditViewControllerToolbar.swift */,
+				A6B819421D49F957008C7E38 /* UIImage.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -283,11 +289,13 @@
 				A6CCAC141CC87E86007184CE /* Notebook.swift in Sources */,
 				A6FF42441CC9B65F0004F9BD /* CustomOperators.swift in Sources */,
 				379CAAB91CD67F9500070D7C /* MyApplication.swift in Sources */,
+				A6B819411D49F454008C7E38 /* NoteEditViewControllerToolbar.swift in Sources */,
 				A6CCAC121CC87801007184CE /* NoteEditViewController.swift in Sources */,
 				A6CDB27D1CC759F700CC79D6 /* AllNotesViewTableViewController.swift in Sources */,
 				A6CDB26E1CC7569700CC79D6 /* Notes.xcdatamodeld in Sources */,
 				A6FF42481CC9BE040004F9BD /* SwiftDate.swift in Sources */,
 				A6CDB2661CC7569700CC79D6 /* AppDelegate.swift in Sources */,
+				A6B819431D49F957008C7E38 /* UIImage.swift in Sources */,
 				A6C2A0FB1CCF27EE00026DF9 /* HSBColorPicker.swift in Sources */,
 				A6CDB27B1CC759A300CC79D6 /* NoteTableViewCell.swift in Sources */,
 			);
