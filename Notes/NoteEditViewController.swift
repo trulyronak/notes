@@ -220,10 +220,14 @@ class NoteEditViewController: UIViewController, UIPickerViewDataSource, UIPicker
     
     //3d
     override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        if let touch = touches.first where traitCollection.forceTouchCapability == .Available {
-            if touch.force > 1 {
-                openEditView()
+        if #available(iOS 9.0, *) {
+            if let touch = touches.first where traitCollection.forceTouchCapability == .Available {
+                if touch.force > 1 {
+                    openEditView()
+                }
             }
+        } else {
+            // Fallback on earlier versions
         }
     }
     /*

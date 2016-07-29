@@ -15,12 +15,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     
+    @available(iOS 9.0, *)
     func application(application: UIApplication, performActionForShortcutItem shortcutItem: UIApplicationShortcutItem, completionHandler: (Bool) -> Void) {
         
         // Handle quick actions
         completionHandler(handleQuickAction(shortcutItem))
     }
     
+    @available(iOS 9.0, *)
     func handleQuickAction(shortcutItem: UIApplicationShortcutItem) -> Bool {
         
         var quickActionHandled = false
