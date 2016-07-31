@@ -19,6 +19,9 @@ class NoteEditViewController: UIViewController, UIPickerViewDataSource, UIPicker
     var currentFont: UIFont!
     var currentColor: UIColor!
     
+    var bold = false
+    var italic = false
+    var underline = false
     //fr = noteContentView
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -99,6 +102,7 @@ class NoteEditViewController: UIViewController, UIPickerViewDataSource, UIPicker
         }
     }
     func openEditView() {
+        
         removeEditingViews()
         self.view.endEditing(true)
         let editView = EditView.instanceFromNib() as! EditView
