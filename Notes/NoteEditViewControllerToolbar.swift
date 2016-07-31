@@ -96,6 +96,8 @@ extension NoteEditViewController: UITextViewDelegate{
     
     
     func changeToFontView() {
+        self.view.endEditing(true)
+        self.removeEditingViews()
         let fontView = FontsView.instanceFromNib() as! FontsView
         fontView.frame = CGRectMake(-100, 500, 600, 200)
         print(fontView.frame.height)
@@ -111,6 +113,8 @@ extension NoteEditViewController: UITextViewDelegate{
     }
     
     func changeToColorView() {
+        self.view.endEditing(true)
+        self.removeEditingViews()
         let editView = EditView.instanceFromNib() as! EditView
         editView.frame = CGRectMake(0, self.view.frame.height - editView.frame.height
             , editView.frame.size.width, editView.frame.size.height)
